@@ -1,17 +1,29 @@
 import express from "express";
 import mongoose from "mongoose";
-import { Movie } from "./models/movieModel.js";
-import dotenv from "dotenv"
+import movieRoutes from "./routes/movieRoutes.js";
+import cors from "cors";
+import dotenv from "dotenv";
 dotenv.config({ path: '../.env' });
 
 const app = express();
+
+app.use(express.json());
+
+//Connecting with Frontend (CORS)
+app.use(
+    cors({
+        origin:'http://localhost:3000',
+        methods: ['GET', 'POST','PUT', 'DELETE'],
+        allowedHeaders:['Content-Type']
+    })
+)
 
 app.get('/',(req,res) => {
     console.log(req);
     return res.status(234).send("App is running");
 });
 
-//Route for save movie
+app.use('/movies', movieRoutes);
 
 mongoose
     .connect(process.env.DB)
