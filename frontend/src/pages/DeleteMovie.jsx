@@ -3,12 +3,14 @@ import axios from 'axios'
 import { useNavigate, useParams } from 'react-router-dom'
 import Spinner from '../components/Spinner'
 import BackButton from '../components/BackButton'
-
+import { useSnackbar } from 'notistack'
 
 const DeleteMovie = () => {
     const [loading, setLoading] = useState(false);
     const {id} = useParams();
     const navigate = useNavigate();
+    const { enqueueSnackbar } = useSnackbar();
+
     const handleDelete = ()=>{
         setLoading(true);
         axios
@@ -16,12 +18,13 @@ const DeleteMovie = () => {
             .then((res)=>{
                 console.log(res)
                 setLoading(false);
+                enqueueSnackbar('Movie deleted successfully', {variant: 'success'});
                 navigate('/');
             })
             .catch((e)=>{
                 setLoading(false);
                 console.log(e);
-                alert('Please check the console', e);
+                enqueueSnackbar('Error', {variant: 'error'});
             });
     };
   return (
