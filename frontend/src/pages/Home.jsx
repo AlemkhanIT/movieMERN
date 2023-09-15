@@ -24,7 +24,7 @@ const Home = () => {
             })
     },[])
     return (
-        <div className='pg-4'>
+        <div className='p-4'>
             <div className='flex justify-between items-center'>
                 <h1 className='text-3xl my-8'>Movies List</h1>
                 <Link to='/movies/create'>
@@ -35,7 +35,7 @@ const Home = () => {
                 <table className='w-full border-separate border-spacing-2'>
                     <thead>
                         <tr>
-                        <th className='border border-slate-600 rounded-md'>No</th>
+                        <th className='border border-slate-600 rounded-md'>Num</th>
                         <th className='border border-slate-600 rounded-md'>Title</th>
                         <th className='border border-slate-600 rounded-md max-md:hidden'>Author</th>
                         <th className='border border-slate-600 rounded-md max-md:hidden'>Publish Date</th>
