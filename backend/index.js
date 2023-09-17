@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import movieRoutes from "./routes/movieRoutes.js";
 import cors from "cors";
 import dotenv from "dotenv";
-dotenv.config({ path: '../.env' });
+dotenv.config({ path: './.env' });
 
 const app = express();
 
