@@ -14,7 +14,7 @@ const DeleteMovie = () => {
     const handleDelete = ()=>{
         setLoading(true);
         axios
-            .delete(`http://localhost:5555/movies/${id}`)
+            .delete(`https://movie-storage-ebim.onrender.com/movies/${id}`)
             .then((res)=>{
                 console.log(res)
                 setLoading(false);

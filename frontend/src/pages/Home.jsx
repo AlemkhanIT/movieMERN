@@ -15,7 +15,7 @@ const Home = () => {
     useEffect(()=>{
         setLoading(true);
         axios
-            .get('http://localhost:5555/movies')
+            .get('https://movie-storage-ebim.onrender.com/movies')
             .then((res)=>{
                 console.log(res.data.data)
                 setMovies(res.data.data);

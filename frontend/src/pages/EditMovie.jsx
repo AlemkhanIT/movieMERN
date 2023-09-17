@@ -17,7 +17,7 @@ const EditMovie = () => {
 
     useEffect(()=>{
         setLoading(true);
-        axios.get(`http://localhost:5555/movies/${id}`)
+        axios.get(`https://movie-storage-ebim.onrender.com/movies/${id}`)
         .then((res)=>{
             setTitle(res.data.title);
             setAuthor(res.data.author);

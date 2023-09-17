@@ -20,7 +20,7 @@ const CreateMovie = () => {
         }
         setLoading(true);
         axios
-            .post('http://localhost:5555/movies', data)
+            .post('https://movie-storage-ebim.onrender.com/movies', data)
             .then(()=>{
                 setLoading(false);
                 enqueueSnackbar('Movie created successfully', {variant: 'success'});
